@@ -5,3 +5,4 @@ api-version: '1.13'
 load: STARTUP
 authors: [Rockyers, SkyGameZMC]
 description: A simple, easy to use plugin to keep track of everyone's score
+
