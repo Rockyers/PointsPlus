@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 @Accessors(chain = true)
 public final class PointsPlus extends JavaPlugin {
     private static PointsManager manager;
+
     @Contract(" -> new")
     public static @NotNull PointsPlusAPI getAPI() {
         return PointsPlusAPI.createInstance(manager);
@@ -44,6 +45,8 @@ public final class PointsPlus extends JavaPlugin {
     private void log() {
         Bukkit.getLogger().info("");
     }
+
+    public @NotNull String getPath() {
+        return getDataFolder().getPath();
+    }
 }
-
-
