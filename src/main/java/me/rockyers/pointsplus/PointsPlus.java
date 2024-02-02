@@ -27,7 +27,7 @@ public final class PointsPlus extends JavaPlugin {
         log("&7------ &3[Points+] &7------",
                    "&7|    &3By: &bRockyers     &7|",
                    "&7|       &ev2.0.0        &7|",
-                   "&7--------------------");
+                   "&7-----------------------");
         log();
         log("&3[Points+] &7- &fLoading PointsManager...");
         manager = new PointsManager(this);
