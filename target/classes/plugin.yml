@@ -1,0 +1,8 @@
+name: PointsPlus
+version: '2.0.0'
+main: me.rockyers.pointsplus.PointsPlus
+api-version: '1.13'
+load: STARTUP
+authors: [Rockyers, SkyGameZMC]
+description: A simple, easy to use plugin to keep track of everyone's score
+

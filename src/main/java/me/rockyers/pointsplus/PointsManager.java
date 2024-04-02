@@ -1,28 +1,31 @@
 package me.rockyers.pointsplus;
 
-import de.leonhard.storage.Json;
 import lombok.Getter;
+import me.rockyers.pointsplus.storage.PointsPlusConfig;
+import me.rockyers.pointsplus.storage.StorageManager;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 @Getter
 public class PointsManager {
     private final PointsPlus plugin;
-    private final Json saveFile;
+    private final StorageManager storageManager;
+    private final PointsPlusConfig config;
+
     protected PointsManager(@NotNull PointsPlus plugin) {
         this.plugin = plugin;
-        saveFile = new Json("points.json", plugin.getPath());
+        storageManager = plugin.getStorageManager();
+        config = plugin.getConfigFile();
     }
 
     public int getPoints(@NotNull Player player) {
         String key = player.getUniqueId().toString();
-        // TODO: Add real default from config
-        return saveFile.getOrSetDefault(key, 0);
+        return storageManager.getOrSetDefault(key, config.getDefaultScore());
     }
 
     public PointsManager setPoints(@NotNull Player player, int points) {
         String key = player.getUniqueId().toString();
-        saveFile.set(key, points);
+        storageManager.set(key, points);
         return this;
     }
 }
